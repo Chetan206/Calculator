@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background-color: black;
+        }
+        .calculator-box{
+        
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 15px;
+            color: white;
+          
+        }
+
+        .cal-control{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            row-gap: 10px;
+            column-gap: -10px;
+            padding-top: 200px;
+            padding-left: 50px;
+        }
+
+
+
+        button{
+           margin-right: 35px; 
+           margin-top: 20px;
+           height: 42px;
+           width: 100px;
+           padding-left: 1px;
+           background-color: yellow;
+           color: black;
+           border-radius: 100px;
+        }
+
+        button:hover{
+        background-color: rgba(0, 0, 0, 0.733);
+        color: white;
+        }
+        #writenBox{
+            padding-top: 10px;
+            margin: 0 200px;
+        }
+    </style>
+</head>
+<body>
+          <div class="container">
+               <div class="calculator-box">
+           <input type="text" id="writenBox">
+                <div class="cal-control">
+                    <button type="button">AC</button>
+                    <button type="button">DE</button>
+                    <button type="button">%</button>
+                    <button type="button">/</button>
+                    <button type="button">7</button>
+                    <button type="button">8</button>
+                    <button type="button">9</button>
+                    <button type="button">*</button>
+                    <button type="button">4</button>
+                    <button type="button">5</button>
+                    <button type="button">6</button>
+                    <button type="button">-</button>
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+                    <button type="button">+</button>
+                    <button type="button">00</button>
+                    <button type="button">0</button>
+                    <button type="button">.</button>
+                    <button type="button">=</button>
+               </div>
+               </div>
+          </div>
+</body>
+</html>
