@@ -3,72 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>variables</title>
     <style>
-        body{
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            background-color: black;
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .calculator-box{
-        
-            width: 500px;
-            height: 500px;
-            margin: 0 auto;
-            margin-top: 50px;
-            border-radius: 15px;
-            color: white;
+        body{
+           overflow: hidden;
+           background-color:burlywood;
+        }
+        .button-box{
+            border: 3px solid black;
+           width: 305px;
+            margin-left: 575px;
+            margin-top: 229px;
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
           
         }
-
-        .cal-control{
+        .input-button{
             display: grid;
             grid-template-columns: auto auto auto auto;
-            row-gap: 10px;
-            column-gap: -10px;
-            padding-top: 200px;
-            padding-left: 50px;
+            text-align: center;
+            gap: 3px;
+            width: 300px;
+            height: 200px;
         }
+  button{
+    background-color: black;
+    color: white;
+  }
+
+  button:hover{
+    color: orange;
+  }
+       
+
+  #input{
+    color: white;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+    background-color: grey;
+    border-radius: 2px;
+    border: 1px solid black ;
+  }
 
 
-
-        button{
-           margin-right: 35px; 
-           margin-top: 20px;
-           height: 42px;
-           width: 100px;
-           padding-left: 1px;
-           background-color: yellow;
-           color: black;
-           border-radius: 100px;
-        }
-
-        button:hover{
-        background-color: rgba(0, 0, 0, 0.733);
-        color: white;
-        }
-        #writenBox{
-            padding-top: 10px;
-            margin: 0 200px;
-        }
     </style>
 </head>
 <body>
-          <div class="container">
-               <div class="calculator-box">
-           <input type="text" id="writenBox">
-                <div class="cal-control">
-                    <button type="button">AC</button>
-                
-                    <button type="button">1</button>
-                    <button type="button">2</button>
-                    <button type="button">3</button>
-                    <button type="button">+</button>
 
-                    <button type="button">=</button>
-               </div>
-               </div>
-          </div>
+   
+    <!-- <button onclick= "Quentity = Quentity;console.log(`cart Quentity : ${Quentity}`);">Show Quentity</button>
+
+    <button onclick="Quentity = Quentity + 1; console.log(`cart Quentity : ${Quentity}`);">Add to cart</button>
+
+    <button onclick="Quentity += 2; console.log(`cart Quentity : ${Quentity}`);">+2</button>
+    <button onclick="Quentity += 3; console.log(`cart Quentity : ${Quentity}`);">+3</button>
+    <button onclick="Quentity = 0; console.log(`cart Quentity : ${Quentity}`);">Reset cart</button>
+    
+    
+     <button onclick="num = num + 1; console.log(`Current Values : ${num}`);">+1</button>
+     <button onclick="num = num + 2; console.log(`Current Values : ${num}`);">+2</button>
+     <button onclick="num = num; console.log(`total Value : ${num}`);">Total Value</button> -->
+  
+     <!-- <button onclick="Quentity =  Quentity ; console.log(`Cart item: ${Quentity}`);">Show Quentity</button>
+     <button onclick=" Quentity = Quentity + 1; console.log(`cart item: ${Quentity}`);">Add to cart</button>
+     <button onclick="Quentity = Quentity + 2; console.log(`cart item: ${Quentity}`);">+2</button>
+     <button onclick="Quentity = Quentity + 3; console.log(`cart item : ${Quentity}`);">+3</button>
+     <button onclick="Quentity = 0;console.log(Quentity);">Reset Cart</button> -->
+  <div class="container">
+    <div class="button-box">
+        <input type="number" id="input" >
+        <div class="input-button">
+
+                <button onclick="number = number + 1; console.log(`Number is : ${number}`);">1</button>
+                <button onclick="number = number + 2; console.log(`Number is : ${number}`);">2</button>
+                <button onclick="number = number + 3; console.log(`Number is : ${number}`);">3</button>
+                <button onclick="number = number + '-'; console.log(`Number is : ${number}`);">-</button>
+                <button onclick="number = number + 4; console.log(`Number is : ${number}`);">4</button>
+                <button onclick="number = number + 5; console.log(`Number is : ${number}`);">5</button>
+                <button onclick="number = number + 6; console.log(`Number is : ${number}`);">6</button>
+                <button onclick="number = number + '*'; console.log(`Number is : ${number}`);">*</button>      
+                <button onclick="number = number + 7; console.log(`Number is : ${number}`);">7</button>
+                <button onclick="number = number + 8; console.log(`Number is : ${number}`);">8</button>
+                <button onclick="number = number + 9; console.log(`Number is : ${number}`);">9</button>
+                <button onclick="number = number + '+'; console.log(`Number is : ${number}`);">+</button>
+                <button onclick="number = number + 0; console.log(`Number is : ${number}`);">0</button>
+                <button onclick="number = number + 0+ 0 ; console.log(`Number is : ${number}`);">00</button>
+                <button onclick="number = number + '/'; console.log(`Number is : ${number}`);">/</button> 
+                <button onclick="number = eval(number) ; console.log(`Resut is : ${number}`);" style="background-color: orange;">=</button>
+        </div>
+    </div>
+  </div>
+
+    <script>
+let number = '';
+//     let Quentity = 0;
+    </script>
 </body>
 </html>
