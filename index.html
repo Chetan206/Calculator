@@ -3,106 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>variables</title>
+    <title>Calculator</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-           overflow: hidden;
-           background-color:burlywood;
-        }
-        .button-box{
-            border: 3px solid black;
-           width: 305px;
-            margin-left: 575px;
-            margin-top: 229px;
-            background-color: black;
-            font-family: 'Courier New', Courier, monospace;
-          
-        }
-        .input-button{
-            display: grid;
-            grid-template-columns: auto auto auto auto;
-            text-align: center;
-            gap: 3px;
-            width: 300px;
-            height: 200px;
-        }
-  button{
-    background-color: black;
-    color: white;
-  }
-
-  button:hover{
-    color: orange;
-  }
+      .body-calculator{
+          display: grid;
+          align-items: center;
+          justify-content: center;
+           border: 2px solid black;
+           width: 312px;
+           height: 290px;
+      }
+      .button-controller{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        width: 300px;
+        row-gap: 10px;
        
-
-  #input{
-    color: white;
-    width: 300px;
-    height: 50px;
-    cursor: pointer;
-    background-color: grey;
-    border-radius: 2px;
-    border: 1px solid black ;
-  }
-
-
+      }
+      .button-controller button{
+        width: 70px;
+        height: 50px;
+        border-radius: 10px;
+      }
+      #output{
+         background: #000;
+         color: azure;
+      }
     </style>
 </head>
 <body>
-
-   
-    <!-- <button onclick= "Quentity = Quentity;console.log(`cart Quentity : ${Quentity}`);">Show Quentity</button>
-
-    <button onclick="Quentity = Quentity + 1; console.log(`cart Quentity : ${Quentity}`);">Add to cart</button>
-
-    <button onclick="Quentity += 2; console.log(`cart Quentity : ${Quentity}`);">+2</button>
-    <button onclick="Quentity += 3; console.log(`cart Quentity : ${Quentity}`);">+3</button>
-    <button onclick="Quentity = 0; console.log(`cart Quentity : ${Quentity}`);">Reset cart</button>
-    
-    
-     <button onclick="num = num + 1; console.log(`Current Values : ${num}`);">+1</button>
-     <button onclick="num = num + 2; console.log(`Current Values : ${num}`);">+2</button>
-     <button onclick="num = num; console.log(`total Value : ${num}`);">Total Value</button> -->
-  
-     <!-- <button onclick="Quentity =  Quentity ; console.log(`Cart item: ${Quentity}`);">Show Quentity</button>
-     <button onclick=" Quentity = Quentity + 1; console.log(`cart item: ${Quentity}`);">Add to cart</button>
-     <button onclick="Quentity = Quentity + 2; console.log(`cart item: ${Quentity}`);">+2</button>
-     <button onclick="Quentity = Quentity + 3; console.log(`cart item : ${Quentity}`);">+3</button>
-     <button onclick="Quentity = 0;console.log(Quentity);">Reset Cart</button> -->
   <div class="container">
-    <div class="button-box">
-        <input type="number" id="input" >
-        <div class="input-button">
+    <div class="body-calculator">
 
-                <button onclick="number = number + 1; console.log(`Number is : ${number}`);">1</button>
-                <button onclick="number = number + 2; console.log(`Number is : ${number}`);">2</button>
-                <button onclick="number = number + 3; console.log(`Number is : ${number}`);">3</button>
-                <button onclick="number = number + '-'; console.log(`Number is : ${number}`);">-</button>
-                <button onclick="number = number + 4; console.log(`Number is : ${number}`);">4</button>
-                <button onclick="number = number + 5; console.log(`Number is : ${number}`);">5</button>
-                <button onclick="number = number + 6; console.log(`Number is : ${number}`);">6</button>
-                <button onclick="number = number + '*'; console.log(`Number is : ${number}`);">*</button>      
-                <button onclick="number = number + 7; console.log(`Number is : ${number}`);">7</button>
-                <button onclick="number = number + 8; console.log(`Number is : ${number}`);">8</button>
-                <button onclick="number = number + 9; console.log(`Number is : ${number}`);">9</button>
-                <button onclick="number = number + '+'; console.log(`Number is : ${number}`);">+</button>
-                <button onclick="number = number + 0; console.log(`Number is : ${number}`);">0</button>
-                <button onclick="number = number + 0+ 0 ; console.log(`Number is : ${number}`);">00</button>
-                <button onclick="number = number + '/'; console.log(`Number is : ${number}`);">/</button> 
-                <button onclick="number = eval(number) ; console.log(`Resut is : ${number}`);" style="background-color: orange;">=</button>
-        </div>
+     <p id="output"></p>
+
+    <div class="button-controller">
+   <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button onclick="appendValue('0')">0</button>
+    <button onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('*')">*</button>
+    <button onclick="appendValue('/')">/</button>
+    <button onclick="calculateResult()">=</button>
+    <button onclick="clearOutput()">C</button>
     </div>
-  </div>
-
+</div>
+</div>
     <script>
-let number = '';
-//     let Quentity = 0;
+        let calculation = '';
+
+        function display() {
+            document.querySelector('#output').innerHTML = calculation;
+        }
+
+        function appendValue(value) {
+            calculation += value;
+            display();
+        }
+
+        function calculateResult() {
+                calculation = eval(calculation); 
+                display();
+        }
+
+        function clearOutput() {
+            calculation = '';
+            display();
+        }
     </script>
 </body>
 </html>
