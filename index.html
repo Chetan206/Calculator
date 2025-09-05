@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      @media (max-width: 768px) {
+      .container {
+      background-color: grey;
+  }
+}
       .body-calculator{
           display: grid;
           align-items: center;
           justify-content: center;
            border: 2px solid black;
+           border-radius: 5px;
            width: 312px;
-           height: 290px;
+           height: 310px;
+           margin: auto;
+           margin-top: 15%;
+           position: relative;
+           background-color: black;
+           color: white;
       }
       .button-controller{
         display: grid;
@@ -24,10 +39,15 @@
         width: 70px;
         height: 50px;
         border-radius: 10px;
+        
       }
       #output{
-         background: #000;
-         color: azure;
+         background: white;
+         color: black;
+         height: 35px;
+         margin: 0;
+         text-align: center;
+         margin-top: 5px;
       }
     </style>
 </head>
